@@ -27,7 +27,7 @@ node {
 		}
 	}
 	stage('Sonar') {
-		whithSonarQubeEnv('Sonar') {
+		withSonarQubeEnv('Sonar') {
 			withMaven(maven: 'maven') {
 				sh "mvn sonar:sonar"
 			}
