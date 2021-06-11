@@ -26,5 +26,12 @@ node {
 			sh "mvn jib:build"
 		}
 	}
+	stage('Sonar') {
+		whithSonarQubeEnv('sonar') {
+			withMaven(maven: 'maven') {
+				sh "mvn sonar:sonar"
+			}
+		}
+	}
 
 }
